@@ -60,7 +60,7 @@ const mutations = {
 const actions = {
   login(context, credentials) {
     return new Promise((resolve, reject) => {
-      ApiService.post('api/login', credentials)
+      ApiService.post('api/user/login', credentials)
         .then(({data}) => {
           context.commit(
             'setUser', data.user
@@ -77,12 +77,13 @@ const actions = {
     context.commit('logout')
     context.commit('resetState', null, { root: true })
     return new Promise((resolve, reject) => {
-      ApiService.get('api/logout')
+      ApiService.get('api/user/logout')
         .then(({data}) => {
           context.commit('logout')
           resolve(data)
         })
         .catch(({response}) => {
+          console.log('TEST')
           console.log(response)
           reject(response)
         })
@@ -90,7 +91,7 @@ const actions = {
   },
   register(context, credentials) {
     return new Promise((resolve, reject) => {
-      ApiService.post('api/users', credentials)
+      ApiService.post('api/user/register', credentials)
         .then(({data}) => {
           context.commit('setUser', { token: data.token })
           resolve(data)

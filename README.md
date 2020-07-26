@@ -1,4 +1,7 @@
-# frontend-products
+# Frontend-Products
+
+## Installation
+This is a project based on VueJS and it's supposed to run parallelly with Backend-Products API.
 
 ## Project setup
 ```
@@ -20,5 +23,9 @@ npm run build
 npm run lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Config
+You can change the API URL in this file: `src/common/config.js`
+
+### Author
+
+Marcus Palombello
